@@ -1,0 +1,60 @@
+# --------------------------------------------------------------------------------
+# use
+#    docker compose up -d
+# to build and start the containers
+# Then
+#   - log into PGAdmin at: http://localhost:5050
+#   - log into frontend at: http://localhost
+#
+# use
+#    docker compose down -v
+# to delete the volume(s) (and data) if changes don't seem to take effect
+# --------------------------------------------------------------------------------
+
+version: "3.8"
+services:
+  db:
+    image: postgres:alpine
+    container_name: postgres_container
+    restart: always
+    ports:
+      - "5432:5432"
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=postgres_user
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=pgdb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - app-db-data:/var/lib/postgresql/data/pgdata
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: craighagerman@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+      - ./backend/src/pgadmin/servers.json:/pgadmin4/servers.json
+
+  vue-nginx:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+
+networks:
+  default:
+    name: postgres-service_default
+
+volumes:
+  app-db-data:
+  pgadmin-data:
