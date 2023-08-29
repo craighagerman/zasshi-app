@@ -5,8 +5,8 @@
 
     <ul style="list-style-type: none">
       <li v-for="item in  feedStore.categories "></li>
-        <a :href="item">{{ item }}</a>
-        <!-- TODO: Don't use a href above. Use div with @click. see SourceList -->
+      <a :href="item">{{ item }}</a>
+      <!-- TODO: Don't use a href above. Use div with @click. see SourceList -->
     </ul>
   </div>
 </template>
