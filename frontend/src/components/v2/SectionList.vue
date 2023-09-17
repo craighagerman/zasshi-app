@@ -1,3 +1,9 @@
+<!-- 
+  Display list of user sections/categories
+  - 1st (primary) Left Pane component
+  - clicking on a section will populate FeedPane with feeds from 
+    all channels in this section
+-->
 
 <template>
   <div id="leftpane">

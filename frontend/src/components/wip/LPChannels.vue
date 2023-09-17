@@ -1,9 +1,7 @@
 <!-- 
-
   Display list of channels for a given section
-
+  - 3rd Left Pane component
 -->
-
 
 <template>
   <div id="leftpane">
@@ -35,12 +33,6 @@ import { useFeedStore } from '@/stores/feedStore'
 import { onBeforeMount } from "vue";
 import { ref, reactive, computed, watch } from 'vue'
 const feedStore = useFeedStore()
-
-// onBeforeMount(async () => {
-//     const category_name = feedStore.section_name;
-//   await feedStore.fetch_channels(feedStore.section_name);
-// });
-
 
 function load_feed(item) {
   feedStore.clear_feed_list()

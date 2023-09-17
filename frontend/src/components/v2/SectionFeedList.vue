@@ -1,3 +1,8 @@
+<!-- 
+  Display list of user's sections/categories
+  - 2nd Left Pane component
+  - clicking on a section will replace this component with LP Channels
+-->
 
 <template>
   <div id="leftpane_n2">
