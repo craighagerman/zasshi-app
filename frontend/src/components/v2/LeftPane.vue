@@ -1,61 +1,76 @@
+<!-- 
+  Left Pane in a 3-panel UI
+  - container to be populated by one of (in order)
+    1. SectionList
+    2. SectionFeedList
+    3. LPChannels
+  - n.b behavior of switching between these three components is a combination of 
+    a toggle-able replacement view and a navigation stack
+-->
 
 <template>
-  <div id="leftpane1">
+  <div id="leftpane">
     <h1>Left Pane</h1>
-    <MyButton @increase-by="changeName" />
-
     <div id="dynamic-component-demo" class="demo">
-      <button v-for="(tab, i) in tabs" v-bind:key="tab.name"
-        v-bind:class="['tab-button', { active: currentTab.name === tab.name }]" v-on:click="currentTab = tabs[i]">
-        {{ tab.name }}
-      </button>
-
+    <button
+      v-for="(tab, i) in tabs.slice(0,2)"
+      v-bind:key="tab.name"
+      v-bind:class="['tab-button', { active: currentTab.name === tab.name }]"
+      v-on:click="changeTab(i)"
+    >
+      {{ tab.name }}
+    </button>
       <KeepAlive>
-        <component :is="currentTab.comp"></component>
+        <component :is="currentTab.comp" @go-to-component="goToComponent"></component>
       </KeepAlive>
-
     </div>
   </div>
 </template>
 
 
-
-<script setup>
-name: 'LeftPane'
-import { shallowRef } from 'vue'
+<script>
+import { ref, shallowRef, reactive, computed, watch } from 'vue'
 import SectionList from "@/components/v2/SectionList.vue";
 import SectionFeedList from "@/components/v2/SectionFeedList.vue";
 import LPChannels from "@/components/wip/LPChannels.vue";
-import { reactive, computed } from 'vue'
 
-const tabs = [
-  { name: 'Sections', comp: SectionList },
-  { name: 'Drilldown', comp: SectionFeedList },
-  { name: 'Channels', comp: LPChannels },
+export default {
+  setup() {
 
-  
-]
+    const tabs = [
+      { name: 'Sections', comp: SectionList },
+      { name: 'Drilldown', comp: SectionFeedList },
+      { name: 'Channels', comp: LPChannels },
+    ];
+    var currentTab = ref(tabs[0]);
+    return {
+      tabs,
+      currentTab,
+    };
+  },
 
-defineEmits(['inFocus', 'submit'])
-
-function buttonClick() {
-  emit('submit')
-}
-
-function changeName(n) {
-  count.value = n
-}
-
-// using shallowRef to stop Vue from turning component definitions to reactive objects
-// use normal ref to see a warning
-const currentTab = shallowRef(tabs[1]);
-
+  // Methods are functions that mutate state and trigger updates.
+  // They can be bound as event handlers in templates.
+  methods: {
+    changeTab(idx) {
+      this.currentTab = this.tabs[idx];
+      console.log("currentTab.name " + this.currentTab.name);
+    },
+    goBack() {
+      this.changeTab(0);
+    },
+    goToComponent(idx) {
+      this.changeTab(idx);
+    },
+  },
+};
 </script>
 
 
+
 <style>
-#leftpane1 {
-  /* background-color: cadetblue; */
+#leftpane {
+  /* background-color: lightcyan; */
   bottom: 0;
   /* color: white; */
   color: black;
