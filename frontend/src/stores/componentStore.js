@@ -20,7 +20,7 @@ export const useComponentStore = defineStore({
       const url = "http://127.0.0.1:8000/categories";
       const response = await axios.get(url);
       // console.log(response.data.items);
-      this.categories = response.data.items;
+      this.sections = response.data.items;
     },
 
 

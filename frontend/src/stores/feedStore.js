@@ -5,8 +5,8 @@ import axios from "axios";
 export const useFeedStore = defineStore({
   id: "feedStore",
   state: () => ({
-    categories: [],
-    category_name: "",
+    sections: [],
+    section_name: "",
     channel_id: "",
     channel_name: "",
     channels: [],
@@ -19,7 +19,7 @@ export const useFeedStore = defineStore({
     async fetch_categories() {
       const url = "http://127.0.0.1:8000/categories";
       const response = await axios.get(url);
-      this.categories = response.data.items;
+      this.sections = response.data.items;
     },
 
     async fetch_feed_list() {
@@ -61,7 +61,7 @@ export const useFeedStore = defineStore({
     },
 
     set_category_name(name) {
-      this.category_name = name;
+      this.section_name = name;
     },
 
     clear_feed_list() {
@@ -69,7 +69,7 @@ export const useFeedStore = defineStore({
     },
 
     clear() {
-      this.categories = [];
+      this.sections = [];
       this.feed_list = [];
       this.article = "";
     },

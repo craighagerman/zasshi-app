@@ -3,7 +3,7 @@
   <div id="leftpane_n2">
     <p>Pane #2/3</p>
     <ul style="list-style-type: none">
-      <li v-for="item in  feedStore.categories ">
+      <li v-for="item in  feedStore.sections ">
         <div style="cursor: pointer" @click="set_category(item.id)">{{ item.name }}</div>        
       </li>
     </ul>
@@ -26,12 +26,12 @@ onBeforeMount(async () => {
 
 function set_category(cat_id) {
   // feedStore.channel_name = cat_id
-  feedStore.category_name = cat_id
+  feedStore.section_name = cat_id
   feedStore.fetch_channels(cat_id);
   // feedStore.channel_name = cat_id
   console.log(`cat_id  =  ${cat_id} `)
   // console.log(`feedStore.channel_name  =  ${feedStore.channel_name} `)
-  console.log(`feedStore.channel_name  =  ${feedStore.category_name} `)
+  console.log(`feedStore.channel_name  =  ${feedStore.section_name} `)
   emit('go-to-component', 2)
 }
 

@@ -5,7 +5,7 @@
     <p>Pane #2/3</p>
 
     <ul style="list-style-type: none">
-        <li v-for="item in  feedStore.categories ">
+        <li v-for="item in  feedStore.sections ">
           <div style="cursor: pointer" @click="fetch_feeds(item.id)">{{ item.name }}</div>
         </li>
     </ul>

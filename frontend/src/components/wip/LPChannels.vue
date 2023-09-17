@@ -7,7 +7,7 @@
 
 <template>
   <div id="leftpane">
-    <h2>{{ feedStore.category_name }} Channels</h2>
+    <h2>{{ feedStore.section_name }} Channels</h2>
     <p>Pane #3/3</p>
 
     <div id="dynamic-component-demo" class="demo">
@@ -37,8 +37,8 @@ import { ref, reactive, computed, watch } from 'vue'
 const feedStore = useFeedStore()
 
 // onBeforeMount(async () => {
-//     const category_name = feedStore.category_name;
-//   await feedStore.fetch_channels(feedStore.category_name);
+//     const category_name = feedStore.section_name;
+//   await feedStore.fetch_channels(feedStore.section_name);
 // });
 
 
