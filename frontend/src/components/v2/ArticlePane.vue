@@ -45,7 +45,7 @@ function span(text) {
   bottom: 0;
   color: black;
   position: absolute;
-  border: 1px dotted gray;
+  /* border: 1px dotted gray; */
   /* left: 800px; */
   margin-left: 800px;
   /* width: 100%; */

@@ -1,7 +1,9 @@
 from typing import Union
 
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
+
 
 from feed.profile_feed import parse_feed_metadata
 from fetch.async_fetcher import fetch_all_feeds

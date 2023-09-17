@@ -6,7 +6,12 @@ export const useFeedStore = defineStore({
   id: "feedStore",
   state: () => ({
     categories: [],
+    category_name: "",
+    channel_id: "",
+    channel_name: "",
+    channels: [],
     feed_list: [],
+    feed_pane_title: "",
     article: "<div><h1>*** Hello, World! ***</h1></div>",
   }),
 
@@ -14,15 +19,29 @@ export const useFeedStore = defineStore({
     async fetch_categories() {
       const url = "http://127.0.0.1:8000/categories";
       const response = await axios.get(url);
-      // console.log(response.data.items);
       this.categories = response.data.items;
     },
 
     async fetch_feed_list() {
       const url = "http://127.0.0.1:8000/feed_list";
       const response = await axios.get(url);
-      // console.log(response.data.items);
       this.feed_list = response.data.items;
+    },
+
+    async fetch_channels(query) {
+      this.channels = []
+      const url = "http://127.0.0.1:8000/channel_list?channel_id=" + query;
+      const response = await axios.get(url);
+      this.channel_id = response.data.name;
+      this.channel_name = response.data.name;
+      this.channels = response.data.items;
+    },
+
+    async fetch_feed(xmlUrl) {
+        const url = "http://127.0.0.1:8000/fetch_feed?q=" + xmlUrl;
+        console.log("POST: " + url)
+        const response = await axios.get(url)
+        this.feed_list = response.data.items
     },
 
     // async fetch_article() {
@@ -39,6 +58,14 @@ export const useFeedStore = defineStore({
       console.log("fetching article...");
       // console.log(response.data);
       this.article = response.data;
+    },
+
+    set_category_name(name) {
+      this.category_name = name;
+    },
+
+    clear_feed_list() {
+      this.feed_list = [];
     },
 
     clear() {

@@ -8,7 +8,7 @@ import os
 # ----------------------------------------
 # Public
 # ----------------------------------------
-def get_section_metadat(section_id):
+def get_section_metadata(section_id):
     return _load_section_data(section_id)
 
 

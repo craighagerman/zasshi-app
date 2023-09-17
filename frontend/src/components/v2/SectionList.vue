@@ -1,12 +1,13 @@
 
 <template>
   <div id="leftpane">
-    <H3>Sections</H3>
+    <H3>Section List</H3>
+    <p>Pane #2/3</p>
 
     <ul style="list-style-type: none">
-      <li v-for="item in  feedStore.categories "></li>
-        <a :href="item">{{ item }}</a>
-        <!-- TODO: Don't use a href above. Use div with @click. see SourceList -->
+        <li v-for="item in  feedStore.categories ">
+          <div style="cursor: pointer" @click="fetch_feeds(item.id)">{{ item.name }}</div>
+        </li>
     </ul>
   </div>
 </template>
@@ -23,5 +24,11 @@ const feedStore = useFeedStore()
 onBeforeMount(async () => {
   await feedStore.fetch_categories();
 });
+
+
+function fetch_feeds(url) {
+  console.log("Fetch feeds for category id: " + url)
+  feedStore.fetch_feeds(url);
+}
 
 </script>

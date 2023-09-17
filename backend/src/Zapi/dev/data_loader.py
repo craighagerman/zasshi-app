@@ -7,7 +7,7 @@ from dev.data_path import DevData
 class LocalData:
 
     def get_categories(self):
-        path = os.path.join(DevData().dev_data_dir(), "sample_categories.json")
+        path = os.path.join(DevData().dev_data_dir(), "sample_categories_2.json")
         data = json.load(open(path))
         return data
 

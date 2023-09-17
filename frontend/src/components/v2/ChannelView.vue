@@ -1,18 +1,18 @@
 
 <template>
   <div id="leftpane">
-    <H3>Section View</H3>
+    <H3>Channel View</H3>
 
     <ul style="list-style-type: none">
       <!-- <li v-for="item in  feedStore.categories "></li> -->
       <!-- <a :href="item">{{ item }}</a> -->
-      
-            <li v-for="(item, index) in feedStore.categories" :key="item.id">
-              <div class="feedTitleDiv" style="cursor: pointer" onmouseover="this.style.background='gray';"
-                onmouseout="this.style.background='white';" @click="feedFetcher(item.xmlUrl)">
-                <p class="feedTitle">{{ item.name }}</p>
-              </div>
-            </li>
+
+      <li v-for="(item, index) in feedStore.categories" :key="item.id">
+        <div class="feedTitleDiv" style="cursor: pointer" onmouseover="this.style.background='cadetblue';"
+          onmouseout="this.style.background='white';" @click="feedFetcher(item.xmlUrl)">
+          <p class="feedTitle">{{ item.name }}</p>
+        </div>
+      </li>
 
     </ul>
   </div>
@@ -21,7 +21,7 @@
 
 
 <script setup>
-name: 'SectionView'
+name: 'ChannelView'
 
 import { useFeedStore } from '@/stores/feedStore'
 import { onBeforeMount } from "vue";

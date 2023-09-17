@@ -26,6 +26,7 @@ def get_predefined_feed():
 # ----------------------------------------
 def get_feed(url):
     f = feedparser.parse(url)
+    feed_published = f.feed.get("published", "")
     entries = f.entries
     return {
         "items": [
@@ -34,7 +35,7 @@ def get_feed(url):
                 "source": f.feed.title,
                 "title": e.title,
                 "author": e.get("author", ""),
-                "published": e.published,
+                "published": e.get("published", feed_published), # TODO - infer date if it isn't present
                 "link": e.link,
                 "description": parse_summary(e)
             }
