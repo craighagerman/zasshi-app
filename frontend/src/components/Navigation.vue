@@ -16,6 +16,7 @@
       <li>
         <router-link to="/v2">Zasshi-v2</router-link>
       </li>
+      <li><h2>Zasshi</h2></li>
     </ul>
   </div>
 </template>
@@ -27,7 +28,6 @@ import { onBeforeMount } from "vue";
 onBeforeMount(async () => {
   console.log('window.innerWidth: ' + window.innerWidth)
 });
-
 
 // window.innerHeight
 </script>
@@ -44,10 +44,13 @@ li {
 }
 
 .navbar {
-  /* text-align: center; */
-  /* background-color: lightgrey; */
+  /* white-space : nowrap;  */
+  /* overflow : hidden;  */
   border: 1px dotted gray;
+  /* display: inline-block; */
 
+
+  /* background-color: lightgrey; */
   /* padding: 10px; */
   /* height: 120px; */
   /* The code that you need to copy */

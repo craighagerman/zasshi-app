@@ -32,15 +32,15 @@
 import { ref, shallowRef, reactive, computed, watch } from 'vue'
 import SectionList from "@/components/v2/SectionList.vue";
 import SectionFeedList from "@/components/v2/SectionFeedList.vue";
-import LPChannels from "@/components/wip/LPChannels.vue";
+import ChannelView from "@/components/v2/ChannelView.vue";
 
 export default {
   setup() {
 
     const tabs = [
       { name: 'Sections', comp: SectionList },
-      { name: 'Drilldown', comp: SectionFeedList },
-      { name: 'Channels', comp: LPChannels },
+      { name: 'Inspect', comp: SectionFeedList },
+      { name: 'Channels', comp: ChannelView },
     ];
     var currentTab = ref(tabs[0]);
     return {
