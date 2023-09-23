@@ -13,6 +13,7 @@ export const useFeedStore = defineStore({
     feed_list: [],
     feed_pane_title: "",
     article: "<div><h1>*** Hello, World! ***</h1></div>",
+    section_channels: []
   }),
 
   actions: {
@@ -73,5 +74,16 @@ export const useFeedStore = defineStore({
       this.feed_list = [];
       this.article = "";
     },
+
+    // ------------------------------
+    // Accordian
+    // ------------------------------
+
+    async fetch_section_channels() {
+      const url = "http://127.0.0.1:8000/v1/section_channels";
+      const response = await axios.get(url)      
+      this.section_channels = response.data.feeds;
+    },
+
   },
 });

@@ -11,7 +11,7 @@
 
 name: 'App_v1'
 
-import LeftNavBar from "@/components/v1/LeftNavBar.vue";
+import LeftNavBar from "@/components/v0/LeftNavBar.vue";
 import ArticleList from "@/components/v1/ArticleList.vue";
 import TopNavBar from "@/components/v1/TopNavBar.vue";
 

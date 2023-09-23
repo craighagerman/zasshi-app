@@ -32,15 +32,14 @@ onBeforeMount(async () => {
 <style>
 #feedpane {
   /* background-color: pink; */
-  bottom: 0;
-  /* color: white; */
   color: black;
   /* overflow: hidden; */
   position: absolute;
   /* border: 1px dotted gray; */
-  /* right: 0; */
+  top: 100px;
   left: 250px;
-  /* top: 100px; */
+  /* right: 0; */
+  bottom: 0;
   width: 550px;
   /* height: 1000px; */
   height: 100vh;

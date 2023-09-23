@@ -2,9 +2,11 @@
 
 <template id="LeftNavBar">
     <div id="left-sidebar">
-        <h1>{{ msg }}</h1>
+        <!-- <h1>{{ msg }}</h1> -->
+        <h1>Foo Bar</h1>
         <ul style="list-style-type: none">
             <li v-for="item in  rssStore.feedUrls ">
+
                 <!-- <a class="rsslink" :href="item">{{ item }}</a> -->
                 <!-- <div class="feedTitleDiv" style="cursor:pointer;" @mouseover="showMe" @mouseout="hideMe" @click="feedFetcher(item.xmlUrl)"></div> -->
 
@@ -30,7 +32,7 @@ import { useArticleStore } from '@/stores/articleStore'
 import SourceList from "@/components/v1/SourceList.vue";
 const rssStore = useRssStore()
 const articleStore = useArticleStore()
-const msg = ''
+const msg = 'Hello World'
 
 onBeforeMount(async () => {
     await rssStore.fetch_feed_list();

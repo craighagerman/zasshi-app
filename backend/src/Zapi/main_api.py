@@ -116,4 +116,14 @@ def fetch_feed(q: Union[str, None] = None):
 @app.get("section_channels")
 def section_channels(q: Union[str, None] = None):
     if q:
-        return get_section_metadat(q)
+        return get_section_metadata(q)
+
+
+# ================================================================================
+
+
+@app.get("/v1/section_channels")
+def section_channels():
+    return LocalData().load_section_channels()
+
+

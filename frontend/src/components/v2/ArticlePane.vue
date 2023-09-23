@@ -42,6 +42,7 @@ function span(text) {
 #articlepane {
   /* background-color: lightblue; */
   padding: 10px;
+  top: 120px;
   bottom: 0;
   color: black;
   position: absolute;

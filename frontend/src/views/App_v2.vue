@@ -2,35 +2,13 @@
 
 
 <template>
-  <h1>Zasshi-v2</h1>
-  <LeftPane />
-  <FeedPane />
-  <ArticlePane />
+  <component :is=ThreePanelContainer></component>
 </template>
 
 
-
 <script setup>
-
 name: 'App_v2'
-import LeftPane from "@/components/v2/LeftPane.vue";
-import FeedPane from "@/components/v2/FeedPane.vue";
-import ArticlePane from "@/components/v2/ArticlePane.vue";
-
-const title = getTitle(this)
-if (title) {
-  document.title = title
-}
-
-function getTitle(vm) {
-  return "Zasshi"
-}
-
+import ThreePanelContainer from "@/components/v2/3PanelContainer.vue";
 </script>
-
-
-
-
-
 
 <style></style>

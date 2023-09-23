@@ -19,3 +19,10 @@ class LocalData:
         # path = os.path.join(DevData().dev_data_dir(), "sample_article.json")
         path = os.path.join(DevData().dev_data_dir(), "sample_article_1.html")
         return open(path).read()
+
+    def load_section_channels(self):
+        path = os.path.join(DevData().dev_data_dir(), "news_list.json")
+        with open(path) as fo:
+            data = json.load(fo)
+            return {"feeds": data}
+

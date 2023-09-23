@@ -9,7 +9,7 @@
 -->
 
 <template>
-  <div id="leftpane">
+  <div id="navigationStack">
     <h1>Left Pane</h1>
     <div id="dynamic-component-demo" class="demo">
     <button
@@ -69,17 +69,18 @@ export default {
 
 
 <style>
-#leftpane {
+#navigationStack {
   /* background-color: lightcyan; */
-  bottom: 0;
+
   /* color: white; */
   color: black;
   /* overflow: hidden; */
   /* position: absolute; */
   /* border: 1px dotted gray; */
-  /* right: 0; */
-  left: 0;
   /* top: 120px; */
+  left: 0;
+  /* right: 0; */
+  bottom: 0;
   width: 250px;
   /* height: 1000px; */
   height: 100vh;
