@@ -4,11 +4,12 @@ import axios from "axios";
 
 export const useSettingsStore = defineStore({
   id: "settingsStore",
-
   state: () => ({
-    ui_mode: "accordion",
+    ui_mode: "navigationStack",
   }),
-
+  // getters: {
+  //   currentMode: (state) => state.ui_mode,
+  // },
   actions: {
     async foo_bar() {    
       const response = await axios.get(url);

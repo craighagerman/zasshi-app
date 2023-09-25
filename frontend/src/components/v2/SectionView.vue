@@ -1,7 +1,7 @@
 
 <template>
   <div id="leftpane">
-    <H3>Section View</H3>
+    <h3>Section View</h3>
 
     <ul style="list-style-type: none">
       <!-- <li v-for="item in  feedStore.sections "></li> -->

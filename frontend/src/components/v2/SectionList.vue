@@ -7,7 +7,7 @@
 
 <template>
   <div id="leftpane">
-    <H3>Section List</H3>
+    <h3>Section List</h3>
     <p>Pane #2/3</p>
 
     <ul style="list-style-type: none">
