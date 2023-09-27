@@ -10,9 +10,6 @@
       <li>
         <router-link to="/todos">Todos</router-link>
       </li>
-      <!-- <li>
-        <router-link to="/v1">Zasshi-v1</router-link>
-      </li> -->
       <li>
         <router-link to="/zasshi">Zasshi</router-link>
       </li>
