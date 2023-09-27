@@ -11,9 +11,9 @@
 
 <script setup>
 name: 'ThreePanelContainer'
-import LeftContainerPanel from "@/components/v2/LeftContainerPanel.vue";
-import FeedPane from "@/components/v2/FeedPane.vue";
-import ArticlePane from "@/components/v2/ArticlePane.vue";
+import LeftContainerPanel from "@/components/3Panes/LeftContainerPanel.vue";
+import FeedPane from "@/components/3Panes/FeedPane.vue";
+import ArticlePane from "@/components/3Panes/ArticlePane.vue";
 
 const title = getTitle(this)
 if (title) {

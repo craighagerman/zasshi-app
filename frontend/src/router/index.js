@@ -16,7 +16,7 @@ const router = createRouter({
     { path: "/about", component: About },
     { path: "/todos", component: Todos },
     // { path: "/v1", component: App_v1 },
-    { path: "/v2", component: App_v2 },
+    { path: "/zasshi", component: App_v2 },
     { path: "/settings", component: SettingsView },
   ],
 });

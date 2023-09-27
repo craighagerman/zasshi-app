@@ -17,7 +17,7 @@
 
 
 <script setup>
-name: 'ArticleCard_v2'
+name: 'ArticleCard'
 
 import { useFeedStore } from '@/stores/feedStore'
 const feedStore = useFeedStore()
@@ -34,7 +34,6 @@ const props = defineProps({
 function fetchArticle(url) {
   feedStore.fetch_article(url);
 }
-
 </script>
 
 

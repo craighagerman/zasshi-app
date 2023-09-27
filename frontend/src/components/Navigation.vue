@@ -14,7 +14,7 @@
         <router-link to="/v1">Zasshi-v1</router-link>
       </li> -->
       <li>
-        <router-link to="/v2">Zasshi-v2</router-link>
+        <router-link to="/zasshi">Zasshi</router-link>
       </li>
       <li>
         <router-link to="/settings">Settings</router-link>

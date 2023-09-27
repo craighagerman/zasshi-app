@@ -30,9 +30,9 @@
 
 <script>
 import { ref, shallowRef, reactive, computed, watch } from 'vue'
-import SectionList from "@/components/v2/SectionList.vue";
-import SectionFeedList from "@/components/v2/SectionFeedList.vue";
-import ChannelView from "@/components/v2/ChannelView.vue";
+import SectionList from "@/components/3Panes/SectionList.vue";
+import SectionFeedList from "@/components/3Panes/SectionFeedList.vue";
+import ChannelView from "@/components/3Panes/ChannelView.vue";
 
 export default {
   setup() {

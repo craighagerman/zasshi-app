@@ -8,7 +8,7 @@
 
 <script setup>
 name: 'App_v2'
-import ThreePanelContainer from "@/components/v2/3PanelContainer.vue";
+import ThreePanelContainer from "@/components/3Panes/3PanelContainer.vue";
 </script>
 
 <style></style>

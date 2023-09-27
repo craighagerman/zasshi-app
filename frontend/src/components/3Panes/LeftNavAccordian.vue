@@ -14,7 +14,7 @@
 
 
 <script setup>
-import AccordianChannels from "@/components/v2/AccordianChannels.vue";
+import AccordianChannels from "@/components/3Panes/AccordianChannels.vue";
 import { onBeforeMount } from "vue";
 import { useFeedStore } from '@/stores/feedStore'
 const feedStore = useFeedStore()
