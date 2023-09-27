@@ -5,7 +5,7 @@
         <p id="dev_label">Accordian</p>
         <ul style="list-style-type: none">
             <li v-for="item in  feedStore.section_channels ">
-                <SourceList v-bind:category=item.category v-bind:items="item.items" />
+                <AccordianChannels v-bind:category=item.category v-bind:items="item.items" />
             </li>
         </ul>
     </div>
@@ -14,7 +14,7 @@
 
 
 <script setup>
-import SourceList from "@/components/v1/SourceList.vue";
+import AccordianChannels from "@/components/v2/AccordianChannels.vue";
 import { onBeforeMount } from "vue";
 import { useFeedStore } from '@/stores/feedStore'
 const feedStore = useFeedStore()

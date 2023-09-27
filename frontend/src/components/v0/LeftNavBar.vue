@@ -16,7 +16,7 @@
                 </div> -->
 
 
-                <SourceList v-bind:category=item.category v-bind:items="item.items" />
+                <!-- <SourceList v-bind:category=item.category v-bind:items="item.items" /> -->
 
             </li>
         </ul>
@@ -29,7 +29,7 @@
 import { useRssStore } from '@/stores/rssStore'
 import { onBeforeMount } from "vue";
 import { useArticleStore } from '@/stores/articleStore'
-import SourceList from "@/components/v1/SourceList.vue";
+// import SourceList from "@/components/v1/SourceList.vue";
 const rssStore = useRssStore()
 const articleStore = useArticleStore()
 const msg = 'Hello World'

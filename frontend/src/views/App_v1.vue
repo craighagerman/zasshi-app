@@ -13,7 +13,7 @@ name: 'App_v1'
 
 import LeftNavBar from "@/components/v0/LeftNavBar.vue";
 import ArticleList from "@/components/v1/ArticleList.vue";
-import TopNavBar from "@/components/v1/TopNavBar.vue";
+// import TopNavBar from "@/components/v1/TopNavBar.vue";
 
 const title = getTitle(this)
 if (title) {

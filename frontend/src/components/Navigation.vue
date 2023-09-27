@@ -28,9 +28,9 @@
 name: 'Navigation'
 import { onBeforeMount } from "vue";
 
-onBeforeMount(async () => {
-  console.log('window.innerWidth: ' + window.innerWidth)
-});
+// onBeforeMount(async () => {
+  // console.log('window.innerWidth: ' + window.innerWidth)
+// });
 
 // window.innerHeight
 </script>

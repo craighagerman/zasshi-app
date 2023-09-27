@@ -31,12 +31,7 @@ const props = defineProps({
 })
 
 
-function testFunction(event) {
-  console.log('test clicked')
-}
-
 function fetchArticle(url) {
-  console.log('fetchArticle clicked with url: ' + url);
   feedStore.fetch_article(url);
 }
 

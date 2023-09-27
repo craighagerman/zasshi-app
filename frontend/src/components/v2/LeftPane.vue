@@ -36,11 +36,14 @@ import ChannelView from "@/components/v2/ChannelView.vue";
 
 export default {
   setup() {
+    const section_list = shallowRef(SectionList)
+    const section_feed_list = shallowRef(SectionFeedList)
+    const channel_view = shallowRef(ChannelView)
 
     const tabs = [
-      { name: 'Sections', comp: SectionList },
-      { name: 'Inspect', comp: SectionFeedList },
-      { name: 'Channels', comp: ChannelView },
+      { name: 'Sections', comp: section_list },
+      { name: 'Inspect', comp: section_feed_list },
+      { name: 'Channels', comp: channel_view },
     ];
     var currentTab = ref(tabs[0]);
     return {
@@ -54,7 +57,6 @@ export default {
   methods: {
     changeTab(idx) {
       this.currentTab = this.tabs[idx];
-      console.log("currentTab.name " + this.currentTab.name);
     },
     goBack() {
       this.changeTab(0);

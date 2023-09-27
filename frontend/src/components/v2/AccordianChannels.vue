@@ -1,18 +1,15 @@
-<!-- SourceList.vue -->
+<!-- AccordianChannels.vue -->
 
-<template id="SourceList">
+<template id="AccordianChannels">
   <div class="accordianContainer" v-on:click="toggle()" style="cursor: pointer">
     <h2>{{ category }}</h2>
     <!-- <input type="button" value="Toggle Collapse" v-on:click="toggleButton()" /> -->
 
-    <div  v-show="showSection">
+    <div v-show="showSection">
       <ul class="accordianList">
         <li v-for="(item, index) in items" :key="item.id">
-          <div class="feedTitleDiv" 
-            style="cursor: pointer" 
-            onmouseover="this.style.background='gray';"
-            onmouseout="this.style.background='white';" 
-            @click="feedFetcher(item.xmlUrl)">
+          <div class="feedTitleDiv" style="cursor: pointer" onmouseover="this.style.background='gray';"
+            onmouseout="this.style.background='white';" @click="feedFetcher(item.xmlUrl)">
             <p class="accordianChannelName">{{ item.title }}</p>
           </div>
         </li>
@@ -24,6 +21,7 @@
 
 
 <script setup>
+name: "AccordianChannels"
 import { ref } from "vue";
 import { useFeedStore } from '@/stores/feedStore'
 const feedStore = useFeedStore()
@@ -36,12 +34,10 @@ const props = defineProps({
 
 function toggle() {
   this.showSection = !this.showSection;
-  console.log(this.showSection)
 }
 
 function toggleButton() {
   this.showSection = !this.showSection;
-  console.log(this.showSection)
 }
 
 
@@ -54,21 +50,20 @@ function feedFetcher(url) {
 
 
 <style scoped>
-
 #accordianContainer {
-    background-color: blue;
-    bottom: 0;
-    color: white;
-    /* overflow: hidden; */
-    position: absolute;
+  background-color: blue;
+  bottom: 0;
+  color: white;
+  /* overflow: hidden; */
+  position: absolute;
 
-    /* right: 0; */
-    left: 0;
-    top: 120px;
-    width: 300px;
-    /* height: 1000px; */
-    height: 100vh;
-    /* height: 100%; */
+  /* right: 0; */
+  left: 0;
+  top: 120px;
+  width: 300px;
+  /* height: 1000px; */
+  height: 100vh;
+  /* height: 100%; */
 }
 
 
@@ -80,18 +75,18 @@ function feedFetcher(url) {
 }
 
 
-li{
+li {
   margin: -10px 10px;
 }
 
 .feedTitleDiv {
-    /* padding: 2px; */
-    width: 250px;
+  /* padding: 2px; */
+  width: 250px;
 }
 
 .accordianChannelName {
-    /* color: orange; */
-    font-size: 14px;
+  /* color: orange; */
+  font-size: 14px;
 }
 
 #toggle {

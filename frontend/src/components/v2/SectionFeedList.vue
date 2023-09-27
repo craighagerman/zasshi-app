@@ -30,13 +30,8 @@ onBeforeMount(async () => {
 });
 
 function set_category(cat_id) {
-  // feedStore.channel_name = cat_id
   feedStore.section_name = cat_id
   feedStore.fetch_channels(cat_id);
-  // feedStore.channel_name = cat_id
-  console.log(`cat_id  =  ${cat_id} `)
-  // console.log(`feedStore.channel_name  =  ${feedStore.channel_name} `)
-  console.log(`feedStore.channel_name  =  ${feedStore.section_name} `)
   emit('go-to-component', 2)
 }
 

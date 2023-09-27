@@ -36,7 +36,6 @@ const feedStore = useFeedStore()
 
 function load_feed(item) {
   feedStore.clear_feed_list()
-  console.log("Loading url... " + item.xmlUrl)
   feedStore.feed_pane_title = item.title
   feedStore.fetch_feed(item.xmlUrl);
 }

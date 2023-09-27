@@ -19,10 +19,8 @@
 </template>
 
 
-
 <script setup>
 name: 'SectionView'
-
 import { useFeedStore } from '@/stores/feedStore'
 import { onBeforeMount } from "vue";
 const feedStore = useFeedStore()

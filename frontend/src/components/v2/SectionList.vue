@@ -22,7 +22,6 @@
 
 <script setup>
 name: 'SectionList'
-
 import { useFeedStore } from '@/stores/feedStore'
 import { onBeforeMount } from "vue";
 const feedStore = useFeedStore()

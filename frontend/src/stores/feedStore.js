@@ -40,7 +40,6 @@ export const useFeedStore = defineStore({
 
     async fetch_feed(xmlUrl) {
         const url = "http://127.0.0.1:8000/fetch_feed?q=" + xmlUrl;
-        console.log("POST: " + url)
         const response = await axios.get(url)
         this.feed_list = response.data.items
     },
@@ -56,8 +55,6 @@ export const useFeedStore = defineStore({
       // const url = "http://127.0.0.1:8000/article";
       const fullurl = "http://127.0.0.1:8000/get_article?url=" + url;
       const response = await axios.get(fullurl);
-      console.log("fetching article...");
-      // console.log(response.data);
       this.article = response.data;
     },
 

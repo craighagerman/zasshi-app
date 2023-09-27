@@ -10,15 +10,12 @@
 
 <script setup>
 name: 'ArticlePane'
-
 import { useFeedStore } from '@/stores/feedStore'
 // import { onBeforeMount } from "vue";
 import { watch } from 'vue'
 import { storeToRefs } from 'pinia'
 const feedStore = useFeedStore()
-
 const article = storeToRefs(feedStore);
-
 
 // Note: In general, you can watch values inside composables.
 // But, to watch a pinia state it has to be inside an arrow function
