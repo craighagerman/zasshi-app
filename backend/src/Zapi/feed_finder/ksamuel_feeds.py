@@ -7,6 +7,8 @@ Source:
     https://gist.github.com/ksamuel/1308133/688bb3f3f4f25f65472828a88bda70befb775c2a
 """
 
+# TODO - figure out what this is used for / needed for if anything. Write docstrings
+
 import urllib2
 import feedparser
 from BeautifulSoup import BeautifulSoup

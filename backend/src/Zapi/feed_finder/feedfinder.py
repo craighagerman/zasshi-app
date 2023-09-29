@@ -5,6 +5,8 @@
 #    https://alexmiller.phd/posts/python-3-feedfinder-rss-detection-from-url/
 # --------------------------------------------------------------------------------
 
+# DEPRECATED?
+
 from bs4 import BeautifulSoup as bs4
 import requests
 import feedparser

@@ -14,7 +14,6 @@ from fetch.fetch_rss import get_articles, get_feed
 from fetch.section import get_section_metadata
 from fetch.channels import load_channel_list
 
-
 app = FastAPI()
 
 # origins = ["*"]
@@ -31,9 +30,35 @@ app.add_middleware(
 # ----------------------------------------------------------------------------------------
 # Endpoints
 # ----------------------------------------------------------------------------------------
+
+"""
+Needed Endpoints
+
+get section list
+
+get section channels (should be combined with above)
+
+get section
+
+get channel list
+
+get channel
+
+get feed
+
+get article
+
+
+"""
+
+
+
+
+
 ''' TEST
 http://127.0.0.1:8000/categories
 '''
+# TODO : rename to sections
 @app.get("/categories")
 def categories():
     """
@@ -113,6 +138,7 @@ def fetch_feed(q: Union[str, None] = None):
         return get_feed(q)
 
 
+# TODO - combine with below; Refactor to combine with categories
 @app.get("section_channels")
 def section_channels(q: Union[str, None] = None):
     if q:
@@ -121,7 +147,7 @@ def section_channels(q: Union[str, None] = None):
 
 # ================================================================================
 
-
+# TODO - combine with above
 @app.get("/v1/section_channels")
 def section_channels():
     return LocalData().load_section_channels()

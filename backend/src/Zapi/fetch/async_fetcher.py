@@ -5,6 +5,9 @@ PURPOSE
 '''
 
 
+# TODO - move to separate module?
+#  - This is all the asyncio and aiohttp calls. Should not be mixed up with articles, categories etc
+
 import asyncio
 import time
 

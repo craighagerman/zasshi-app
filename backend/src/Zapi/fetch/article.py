@@ -3,6 +3,8 @@ import re
 from newspaper import Article
 
 
+# TODO - move to separate module? (article)
+
 class FetchArticle:
 
     def fetch(self, url):
